@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//test
 public class mathRandomQuizzer
 	{
 	static int range = (int)(Math.random() * 50) + 1;
