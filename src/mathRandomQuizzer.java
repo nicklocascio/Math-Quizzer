@@ -1,15 +1,17 @@
 import java.util.Scanner;
-//test
+
 public class mathRandomQuizzer
 	{
-	static int range = (int)(Math.random() * 50) + 1;
+	static int range = (int)(Math.random() * 10) + 1;
+	static int generate1 = (int)(Math.random() * 10) + 1;
+	static int generate2 = (int)(Math.random() * 10) + 1; 
 	public static void question()
 		{
 		System.out.println("Given: int randomNumber = (int)(Math.random() * " + range + ") + 1, what is the range of the generated numbers?");
 		}
 	public static void question2()
 		{
-		System.out.println();
+		System.out.println("If you want to generate numbers between " + generate1 + " and " + generate2 + ", what would the end of the Math.random() method look like?");
 		}
 	public static void main(String[] args)
 		{
@@ -33,6 +35,15 @@ public class mathRandomQuizzer
 				}
 			}
 		Scanner answer2 = new Scanner(System.in);
-		
+			question2();
+			String userAnswer2 = answer2.nextLine();
+			if(userAnswer2.equals(")*" + generate1 + "+" + generate2 + ") +" + "+1"))
+				{
+				System.out.println("Correct!");
+				}
+			else
+				{
+				System.out.println("I'm sorry but that's wrong. Keep practicing!");
+				}
 		}
 	}
