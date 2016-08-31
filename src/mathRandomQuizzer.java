@@ -2,10 +2,11 @@ import java.util.Scanner;
 
 public class mathRandomQuizzer
 	{
-	static int range = (int)(Math.random() * 5) + 1;
-	static int range2 = (int)(Math.random() * 10) + 5;
-	static int generate1 = (int)(Math.random() * 10) + 5;
-	static int generate2 = (int)(Math.random() * 5) + 1; 
+	static int range = (int)(Math.random() * 10) + 1;
+	static int range2 = (int)(Math.random() * 10) + 1;
+	static int generate1 = (int)(Math.random() * 10) + 1;
+	static int generate2 = (int)(Math.random() * 10) + 1;
+	// take outside and add/subtract from inside thing
 	public static void question()
 		{
 		System.out.println("Given: int randomNumber = (int)(Math.random() * " + range2 + ") + " + range + ", what is the lower number in the range?");
@@ -16,11 +17,11 @@ public class mathRandomQuizzer
 		}
 	public static void question3()
 		{
-		System.out.println("If you want to generate numbers between " + generate2 + " and " + generate1 + ", what would you put in the blank of: int randomNumber = (int)(Math.random() * ___)?");
+		System.out.println("If you want to generate numbers between " + generate2 + " and " + generate1 + ", what would you put in the blank of: int randomNumber = (int)(Math.random() * __x__) + y?");
 		}
 	public static void question4()
 		{
-		System.out.println("What would you put in this blank: int randomNumber = (int)(Math.random() * ) + ___ ?");
+		System.out.println("What would you put in this blank: int randomNumber = (int)(Math.random() * x ) + __y__ ?");
 		}
 	public static void main(String[] args) throws InterruptedException
 		{
@@ -107,6 +108,7 @@ public class mathRandomQuizzer
 				{
 				System.out.println("You might need a little bit more practice.");
 				}
+		// new variable for math with counter
 			}
 		}
 	}
