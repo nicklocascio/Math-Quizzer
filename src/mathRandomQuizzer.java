@@ -89,7 +89,24 @@ public class mathRandomQuizzer
 				}
 			// I need to know how to say starting next set only if the for loop remains true
 			// If you have time, try to change feedback i.e. good work or try harder based on the grade. Most likely use modulus
-			// Thread.sleep(2000);							
+			// Thread.sleep(2000);	
+			// Why won't it generate new numbers
 			}	
+		if(counter2 == 1)
+			{
+			System.out.println("You answered " + counter2 + " question right out of " + counter + ". You might need to practice a little bit more.");
+			}
+		else
+			{
+			System.out.println("You answered " + counter2 + " questions right out of " + counter + ".");
+			if(counter2 / counter > 0.5)
+				{
+				System.out.println("You got it! It can't hurt to keep practicing like a college student, though.");
+				}
+			else if(counter2 / counter < 0.5)
+				{
+				System.out.println("You might need a little bit more practice.");
+				}
+			}
 		}
 	}
