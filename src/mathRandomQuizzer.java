@@ -2,38 +2,25 @@ import java.util.Scanner;
 
 public class mathRandomQuizzer
 	{
-	static int range = (int)(Math.random() * 10) + 1;
-	static int range2 = (int)(Math.random() * 10) + 1;
-	static int generate1 = (int)(Math.random() * 10) + 1;
-	static int generate2 = (int)(Math.random() * 10) + 1;
-	// take outside and add/subtract from inside thing
-	public static void question()
-		{
-		System.out.println("Given: int randomNumber = (int)(Math.random() * " + range2 + ") + " + range + ", what is the lower number in the range?");
-		}
-	public static void question2()
-		{
-		System.out.println("What is the higher number in the range?");
-		}
-	public static void question3()
-		{
-		System.out.println("If you want to generate numbers between " + generate2 + " and " + generate1 + ", what would you put in the blank of: int randomNumber = (int)(Math.random() * __x__) + y?");
-		}
-	public static void question4()
-		{
-		System.out.println("What would you put in this blank: int randomNumber = (int)(Math.random() * x ) + __y__ ?");
-		}
 	public static void main(String[] args) throws InterruptedException
 		{
+		// Just ask about questions in sets of four
+		// Also figure out the last part concerning feedback
+		// What's up with question four and do I need to have that counter be less? 
+		// What is the math process for question four?
 		Scanner introduction = new Scanner(System.in);
 		System.out.println("Today you will be quizzed on the Math.random() method. You will be quizzed in sets of four questions. How many sets would you like to complete?");
 		int numberOfQuestions = introduction.nextInt();
-		Scanner answer = new Scanner(System.in);
 		int counter = 0;
 		int counter2 = 0;
 		for(int i = 0; i < numberOfQuestions; i++)
 			{
-			question();
+			int range = (int)(Math.random() * 10) + 1;
+			int range2 = (int)(Math.random() * 10) + 1;
+			int generate1 = (int)(Math.random() * 10) + 1;
+			int generate2 = (int)(Math.random() * 10) + 1;
+			Scanner answer = new Scanner(System.in);
+			System.out.println("Given: int randomNumber = (int)(Math.random() * " + range2 + ") + " + range + ", what is the lower number in the range?");		
 			int userAnswer = answer.nextInt();
 			if(userAnswer == range)
 				{
@@ -47,9 +34,9 @@ public class mathRandomQuizzer
 				counter ++;
 				}
 			Scanner answer2 = new Scanner(System.in);
-			question2();
+			System.out.println("What is the higher number in the range?");
 			int userAnswer2 = answer2.nextInt();
-			if(userAnswer2 == range2)
+			if(userAnswer2 == (range2-1) + range)
 				{
 				System.out.println("Correct!");
 				counter ++;
@@ -61,9 +48,9 @@ public class mathRandomQuizzer
 				counter ++;
 				}
 			Scanner answer3 = new Scanner(System.in);
-			question3();
+			System.out.println("If you want to generate numbers between " + generate2 + " and " + generate1 + ", what would you put for x: int randomNumber = (int)(Math.random() * y) + __x__?");			
 			int userAnswer3 = answer3.nextInt();
-			if(userAnswer3 == generate1 - generate2)
+			if(userAnswer3 == generate2)
 				{
 				System.out.println("Correct!");
 				counter ++;
@@ -75,9 +62,9 @@ public class mathRandomQuizzer
 				counter ++;
 				}
 			Scanner answer4 = new Scanner(System.in);
-			question4();
+			System.out.println("What would you put for y: int randomNumber = (int)(Math.random() * __y__ ) + x ?");
 			int userAnswer4 = answer4.nextInt();
-			if(userAnswer4 == generate2)
+			if(userAnswer4 == (generate1 - 1) - generate2)
 				{
 				System.out.println("Correct!");
 				counter ++;
@@ -88,11 +75,8 @@ public class mathRandomQuizzer
 				System.out.println("I'm sorry but that's wrong.");	
 				counter ++;
 				}
-			// I need to know how to say starting next set only if the for loop remains true
-			// If you have time, try to change feedback i.e. good work or try harder based on the grade. Most likely use modulus
-			// Thread.sleep(2000);	
-			// Why won't it generate new numbers
 			}	
+		int numberOfQuestionsRight = counter2 / counter;
 		if(counter2 == 1)
 			{
 			System.out.println("You answered " + counter2 + " question right out of " + counter + ". You might need to practice a little bit more.");
@@ -100,15 +84,14 @@ public class mathRandomQuizzer
 		else
 			{
 			System.out.println("You answered " + counter2 + " questions right out of " + counter + ".");
-			if(counter2 / counter > 0.5)
+			if(numberOfQuestionsRight > 0.5)
 				{
 				System.out.println("You got it! It can't hurt to keep practicing like a college student, though.");
 				}
-			else if(counter2 / counter < 0.5)
+			else if(numberOfQuestionsRight <= 0.5)
 				{
 				System.out.println("You might need a little bit more practice.");
 				}
-		// new variable for math with counter
 			}
 		}
 	}
