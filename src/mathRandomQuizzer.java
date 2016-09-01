@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class mathRandomQuizzer
 	{
-	public static void main(String[] args) throws InterruptedException
+	public static void main(String[] args)
 		{
 		Scanner introduction = new Scanner(System.in);
 		System.out.println("Today you will be quizzed on the Math.random() method. You will be quizzed in sets of four questions. How many sets would you like to complete?");
@@ -82,3 +82,4 @@ public class mathRandomQuizzer
 			}
 		}
 	}
+// Finished if you have a sec just check out feedback math and question four some more
